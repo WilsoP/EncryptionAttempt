@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Excyption Page" Height="336.408" Width="492.152">
     <Grid>
-        <Button x:Name="GenerateButton" Content="Generate Encryption Code" HorizontalAlignment="Left" Height="37" Margin="38,133,0,0" VerticalAlignment="Top" Width="166"/>
+        <Button x:Name="GenerateButton" Content="Generate Encryption Code" HorizontalAlignment="Left" Height="37" Margin="38,133,0,0" VerticalAlignment="Top" Width="166" Click="GenerateButton_Click"/>
         <TextBox x:Name="InputBox" HorizontalAlignment="Left" Height="93" Margin="38,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="413"/>
         <Button x:Name="UndoButton" Content="Decrypt Previous Input" HorizontalAlignment="Left" Height="37" Margin="285,133,0,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.496,0.463"/>
-        <TextBox x:Name="OututBox" HorizontalAlignment="Left" Height="93" Margin="38,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="413"/>
+        <TextBox x:Name="OutputBox" HorizontalAlignment="Left" Height="93" Margin="38,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="413"/>
         <Label x:Name="InputLbl" Content="Input" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Outlbl" Content="Output" HorizontalAlignment="Left" Margin="38,170,0,0" VerticalAlignment="Top"/>
     </Grid>
