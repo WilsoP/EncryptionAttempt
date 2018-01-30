@@ -48,7 +48,7 @@ namespace Encyption
             ///the Encrypt method
             var temp = "";
             int counter = 0;
-            string word;
+            string word = "";
             foreach (char c in input)
             {
                 if (c != ' ')
@@ -90,11 +90,81 @@ namespace Encyption
                             } while (n > 26);
 
                         }
-                        letter = Alphabet[n].ToString() ;
+                        letter = Alphabet[n].ToString();
                         output += letter;
                     }
                 }
             }
+            output = output + " ";
+            return output;
+        }
+
+   
+        private void UndoButton_Click(object sender, RoutedEventArgs e)
+        {
+            OutputBox.Text = "";
+            output = "";
+            string input = "";
+            input = InputBox.Text;
+            input = input + " ";
+            input = input.ToLower();
+            D1Count(input);
+            OutputBox.Text = output;
+
+        }
+
+        public string D1Count(string input)
+        {
+            var temp = ' ';
+            int counter = 0;
+            string word = "";
+            foreach(char c in input)
+            {
+                if(c != ' ')
+                {
+                    counter++;
+                    temp += c;
+                }
+                else
+                {
+                    word = temp.ToString();
+                    D1Decrypt(counter, word);
+                    word = "";
+                    temp = ' ';
+                }
+            }
+
+            return output;
+        }
+
+        public string D1Decrypt(int counter, string word)
+        {
+            string[] Alphabet = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+            string letter = "";
+            int n = 0;
+            foreach (char c in word)
+            {
+                for (int i = 0; i < 26; i++)
+                {
+                    if ( c.ToString() == Alphabet[i])
+                    {
+                        n = i;
+                        n = n - counter;
+                        if(n < 0)
+                        {
+                            do
+                            {
+                                n = n + 26;
+                            } while (n < 0);
+                        }
+                        letter = Alphabet[n].ToString();
+                        output += letter;
+                    }
+                    
+                }
+
+            }
+
             output = output + " ";
             return output;
         }
